@@ -1,0 +1,16 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{3E53BFD6-425C-E5C3-45D2-6BB5A986839C}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "CURSED",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
+		}
+	]
+}
