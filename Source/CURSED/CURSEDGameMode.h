@@ -13,7 +13,8 @@ class CURSED_API ACURSEDGameMode : public AGameMode
 {
 	GENERATED_BODY()
 	
-	
+	//Construtor
+	ACURSEDGameMode();
 	
 	
 };
