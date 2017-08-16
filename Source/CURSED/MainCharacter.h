@@ -10,33 +10,48 @@ class CURSED_API AMainCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
-	///Variables
+	////Variables
+	
+	//Animation Assets
+	UAnimationAsset *Idle_Anim;
+	UAnimationAsset *Walking_Anim;
+
+	//TurnRate
+	UPROPERTY(EditAnyWhere)
+		float TurnRate;
+
+	//DeltaTime template
+	UPROPERTY(EditAnyWhere)
+		float Delta_Time;
 
 	//Create a Scene
 	UPROPERTY(EditAnyWhere)
-	USceneComponent *Player_Scene;
+		USceneComponent *Player_Scene;
 
 	//Create a SpringArm
 	UPROPERTY(EditAnyWhere)
-	USpringArmComponent *SpringArmComponent;
+		USpringArmComponent *SpringArmComponent;
 
 	//Create a CameraComponent
 	UPROPERTY(EditAnyWhere)
-	UCameraComponent *Player_CameraComponent;
+		UCameraComponent *Player_CameraComponent;
 
 	//Vectors & Rotaors
 	UPROPERTY(EditAnyWhere, Category = "Variables_C++")
-	FVector2D MovementInput;
+		FVector2D MovementInput;
 
 	UPROPERTY(EditAnyWhere, Category = "Variables_C++")
-	//MouseAxis.X (Yaw Aixs) && MouseAxis.Y (Pitch Axis)
-	FVector2D MouseAxis;
+		//MouseAxis.X (Yaw Aixs) && MouseAxis.Y (Pitch Axis)
+		FVector2D MouseAxis;
 
 	UPROPERTY(EditAnyWhere, Category = "Variables_C++")
-	FRotator Look_RL;
+		FRotator Look_RL;
 
 	UPROPERTY(EditAnyWhere, Category = "Variables_C++")
-	FRotator Look_UpDown;
+		FRotator Look_UpDown;
+
+	//Trying to Play Animation (Just test)
+	UAnimMontage *AnimMontage;
 
 
 public:
