@@ -10,23 +10,15 @@ class CURSED_API AMainCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
-	////Variables
-	
-	//Animation Assets
-	UAnimationAsset *Idle_Anim;
-	UAnimationAsset *Walking_Anim;
+		////Variables
 
-	//TurnRate
-	UPROPERTY(EditAnyWhere)
+		//TurnRate
+		UPROPERTY(EditAnyWhere)
 		float TurnRate;
 
 	//DeltaTime template
 	UPROPERTY(EditAnyWhere)
 		float Delta_Time;
-
-	//Create a Scene
-	UPROPERTY(EditAnyWhere)
-		USceneComponent *Player_Scene;
 
 	//Create a SpringArm
 	UPROPERTY(EditAnyWhere)
@@ -37,24 +29,23 @@ class CURSED_API AMainCharacter : public ACharacter
 		UCameraComponent *Player_CameraComponent;
 
 	//Vectors & Rotaors
-	UPROPERTY(EditAnyWhere, Category = "Variables_C++")
+	UPROPERTY(EditAnyWhere)
 		FVector2D MovementInput;
 
-	UPROPERTY(EditAnyWhere, Category = "Variables_C++")
+	UPROPERTY(EditAnyWhere)
 		//MouseAxis.X (Yaw Aixs) && MouseAxis.Y (Pitch Axis)
 		FVector2D MouseAxis;
 
-	UPROPERTY(EditAnyWhere, Category = "Variables_C++")
+	UPROPERTY(EditAnyWhere)
 		FRotator Look_RL;
 
-	UPROPERTY(EditAnyWhere, Category = "Variables_C++")
+	UPROPERTY(EditAnyWhere)
 		FRotator Look_UpDown;
 
-	//Trying to Play Animation (Just test)
-	UAnimMontage *AnimMontage;
 
 
 public:
+
 	// Sets default values for this character's properties
 	AMainCharacter();
 
@@ -83,5 +74,17 @@ public:
 	UFUNCTION()
 		void LookRL(float AxisValue);
 
+
+	//Set when the character whants to Run (Idle -> Walk -> Run)
+	UFUNCTION()
+		bool bStartRunning();
+
+	//Set when the character wants to Stop Running ( Run -> Walk -> Idle)
+	UFUNCTION()
+		bool bStopRunning();
+
+	//Update CharacterMovementSpeed
+	UFUNCTION()
+		void Update_MaxWalkSpeed();
 
 };

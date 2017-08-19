@@ -3,11 +3,11 @@
 #include "CURSED.h"
 #include "CURSEDGameMode.h"
 
-ACURSEDGameMode::ACURSEDGameMode()
+ACURSEDGameMode::ACURSEDGameMode(const FObjectInitializer &ObjectInitializer)
 {
-	//Set the DefualtPawnClass to be the MainCharacter Class
-	ConstructorHelpers::FClassFinder<ACharacter>AMainCharacter(TEXT("Class'/Script/CURSED.MainCharacter'"));
-	DefaultPawnClass = AMainCharacter.Class;
+	//Set the default Pawn
+	ConstructorHelpers::FClassFinder<ACharacter>MainCharacter(TEXT("Class'/Script/CURSED.MainCharacter'"));
+	DefaultPawnClass = MainCharacter.Class;
 
 }
 
